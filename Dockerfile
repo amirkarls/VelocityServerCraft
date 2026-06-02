@@ -2,9 +2,11 @@ FROM eclipse-temurin:17-jdk-alpine
 
 WORKDIR /velocity
 
-# Устанавливаем wget и скачиваем Velocity с GitHub
-RUN apk add --no-cache wget && \
-    wget -O velocity.jar https://github.com/VelocityPowered/Velocity/releases/download/3.3.0-SNAPSHOT/velocity-3.3.0-SNAPSHOT-458.jar
+# Устанавливаем wget и curl
+RUN apk add --no-cache wget curl
+
+# Скачиваем последнюю стабильную версию Velocity 3.3.0
+RUN wget -O velocity.jar https://repo.papermc.io/repository/maven-public/com/velocitypowered/velocity-proxy/3.3.0/velocity-proxy-3.3.0.jar
 
 # Создаём папку для плагинов
 RUN mkdir -p plugins
