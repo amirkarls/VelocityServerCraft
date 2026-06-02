@@ -5,8 +5,8 @@ WORKDIR /velocity
 # Создаём папку для плагинов
 RUN mkdir -p plugins
 
-# Копируем ваш Velocity JAR из репозитория
-COPY velocity.jar ./velocity.jar
+# Копируем Velocity JAR из репозитория
+COPY velocity-3.5.0-SNAPSHOT-600.jar ./velocity.jar
 
 # Копируем конфиги и плагины
 COPY velocity.toml ./velocity.toml
