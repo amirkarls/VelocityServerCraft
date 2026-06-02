@@ -1,16 +1,19 @@
-FROM eclipse-temurin:17-jdk-alpine
+FROM eclipse-temurin:21-jdk-alpine
 
 WORKDIR /velocity
+
+# Устанавливаем wget и curl
+RUN apk add --no-cache wget curl
+
+# Скачиваем последнюю версию Velocity 3.5.0-SNAPSHOT
+RUN wget -O velocity.jar https://api.papermc.io/v2/projects/velocity/versions/3.5.0-SNAPSHOT/builds/latest/downloads/velocity-3.5.0-SNAPSHOT.jar
 
 # Создаём папку для плагинов
 RUN mkdir -p plugins
 
-# Копируем Velocity и конфиги
-COPY velocity-3.3.0-SNAPSHOT-436.jar ./velocity.jar
+# Копируем конфиги и плагины из репозитория
 COPY velocity.toml ./velocity.toml
 COPY forwarding.secret ./forwarding.secret
-
-# Копируем плагины из папки plugins
 COPY plugins/*.jar ./plugins/
 
 # Открываем порт Minecraft
