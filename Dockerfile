@@ -1,19 +1,21 @@
-FROM eclipse-temurin:21-jdk-alpine
+FROM eclipse-temurin:17-jdk-alpine
 
 WORKDIR /velocity
 
 # Создаём папку для плагинов
 RUN mkdir -p plugins
 
-# Копируем Velocity JAR из репозитория
-COPY velocity-3.5.0-SNAPSHOT-600.jar ./velocity.jar
+# Копируем Velocity JAR (твой файл)
+COPY velocity-3.4.0-SNAPSHOT-563.jar ./velocity.jar
 
-# Копируем конфиги и плагины
+# Копируем конфиги
 COPY velocity.toml ./velocity.toml
 COPY forwarding.secret ./forwarding.secret
+
+# Копируем плагины
 COPY plugins/*.jar ./plugins/
 
-# Открываем порт Minecraft
+# Открываем порт
 EXPOSE 25565
 
 # Запускаем Velocity
