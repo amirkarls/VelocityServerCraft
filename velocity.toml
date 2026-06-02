@@ -1,4 +1,4 @@
-bind = "0.0.0.0:${PORT}"
+bind = "0.0.0.0:25565"
 motd = "<#ff6600>🐉 Dragons Power Network"
 show-max-players = 500
 online-mode = false
@@ -10,4 +10,8 @@ forwarding-secret-file = "forwarding.secret"
 hub = "dragonpowers-hub.falix.gg:25565"
 grief = "dragon-powers.falix.gg:26563"
 
+# Сервер по умолчанию
 try = ["hub"]
+
+# Эта секция УДАЛЕНА. Если вам нужно её вернуть, она должна указывать на существующие серверы, а не на "lobby", "factions" и т.д.
+# [forced-hosts]
