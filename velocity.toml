@@ -7,14 +7,7 @@ player-info-forwarding-mode = "modern"
 forwarding-secret-file = "forwarding.secret"
 
 [servers]
-# Твой хаб
 hub = "dragonpowers-hub.falix.gg:25565"
-# Твой гриф
 grief = "dragon-powers.falix.gg:26563"
 
-# Сервер по умолчанию
 try = ["hub"]
-
-# УБЕРИ ЭТУ СЕКЦИЮ ПОЛНОСТЬЮ, если нет реальных доменов
-# [forced-hosts]
-# "lobby.example.com" = ["lobby"]
