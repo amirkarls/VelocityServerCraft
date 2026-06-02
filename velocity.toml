@@ -1,0 +1,13 @@
+bind = "0.0.0.0:25565"
+motd = "<#ff6600>🐉 Dragons Power Network"
+show-max-players = 500
+online-mode = false
+
+player-info-forwarding-mode = "modern"
+forwarding-secret-file = "forwarding.secret"
+
+[servers]
+hub = "dragonpowers-hub.falix.gg:25565"
+grief = "dragon-powers.falix.gg:26563"
+
+try = ["hub"]
