@@ -3,19 +3,18 @@ motd = "<#ff6600>🐉 Dragons Power Network"
 show-max-players = 500
 online-mode = false
 
-# Для LimboAuth нужен modern режим
 player-info-forwarding-mode = "modern"
 forwarding-secret-file = "forwarding.secret"
 
 [servers]
-# Виртуальный сервер для авторизации (создаётся LimboAPI)
-auth = "localhost"
-
-# Твой реальный хаб
+# Твой хаб
 hub = "dragonpowers-hub.falix.gg:25565"
-
-# Гриф
+# Твой гриф
 grief = "dragon-powers.falix.gg:26563"
 
-# Порядок: сначала авторизация
-try = ["auth"]
+# Сервер по умолчанию
+try = ["hub"]
+
+# УБЕРИ ЭТУ СЕКЦИЮ ПОЛНОСТЬЮ, если нет реальных доменов
+# [forced-hosts]
+# "lobby.example.com" = ["lobby"]
